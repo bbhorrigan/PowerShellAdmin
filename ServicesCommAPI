@@ -1,0 +1,26 @@
+****Just messing around with the Services Communications API
+
+
+
+GET https://manage.office.com/api/v1.0/contoso.com/ServiceComms/CurrentStatus
+Authorization: Bearer {AAD_Bearer_JWT_Token}
+
+GET https://manage.office.com/api/v1.0/contoso.com/ServiceComms/Messages
+Authorization: Bearer {AAD_Bearer_JWT_Token}
+
+Path /Messages  
+Filters Workload Filter by workload (String, default: all). 
+ StartTime Filter by Start Time (DateTimeOffset, default: ge CurrentTime - 7 days). 
+ EndTime Filter by End Time (DateTimeOffset, default: le CurrentTime). 
+ MessageType Filter by MessageType (String, default: all). 
+ ID Filter by ID (String, default: all). 
+Query-option $select Pick a subset of properties. 
+ $top Pick the top number of results (default and max $top=100). 
+ $skip Skip number of results (default: $skip=0). 
+Response List of "Message" entities. "Message" entity contains "Id" (String), "StartTime" (DateTimeOffset), "EndTime" (DateTimeOffset), "Status" (String), "Messages" (list of "MessageHistory" entity), "LastUpdatedTime" (DateTimeOffset), "Workload" (String), "WorkloadDisplayName" (String), "Feature" (String), "FeatureDisplayName" (String), "MessageType" (Enum, default: all).
+
+"MessageHistory" entity contains "PublishedTime" (DateTimeOffset), "MessageText" (String). 
+
+
+GET https://manage.office.com/api/v1.0/contoso.com/ServiceComms/HistoricalStatus
+Authorization: Bearer {AAD_Bearer_JWT_Token}
