@@ -11,4 +11,5 @@ $arglist2 = "setspn.exe -s MSSQLSvc/$myFQDN",'domain\ServiceAccount'
 
 
 Start-Process powershell.exe -Credential ($credential) -NoNewWindow -ArgumentList $arglist1  
-Start-Process powershell.exe -Credential ($credential) -NoNewWindow -ArgumentList $arglist2  
+Start-Process powershell.exe -Credential ($credential) -NoNewWindow -ArgumentList $arglist2
+Start-Process powershell.exe -Credential ($credential) -NoNewWindow -ArgumentList $arglist3
